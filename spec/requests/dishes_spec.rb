@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Authentication API' do
   describe 'GET /dishes' do
     it 'is successful' do
-      get '/dishes', nil, headers
+      get '/dishes'
 
       expect(response).to be_success
 
