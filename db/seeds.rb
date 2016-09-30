@@ -26,5 +26,8 @@ Restaurant.create([
                       address: 6,	city: 'Boston' }
                   ])
 MenuItem.create([
-                    { dish_id: 1, restaurant_id: 1 }
+                  { dish_id: 1, restaurant_id: 1 }
                 ])
+User.create([
+              { email: 'bill@nye', password: 'sguy' }
+            ])
