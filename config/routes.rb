@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reviews, except: [:new, :edit]
   resources :menu_items, except: [:new, :edit]
   resources :restaurants, except: [:new, :edit]
   resources :dishes, except: [:new, :edit]
