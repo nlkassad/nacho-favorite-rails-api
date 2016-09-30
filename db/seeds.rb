@@ -26,8 +26,14 @@ Restaurant.create([
                       address: 6,	city: 'Boston' }
                   ])
 MenuItem.create([
-                  { dish_id: 1, restaurant_id: 1 }
+                  { dish_id: 1, restaurant_id: 1 },
+                  { dish_id: 1, restaurant_id: 3 }
                 ])
 User.create([
               { email: 'bill@nye', password: 'sguy' }
             ])
+Review.create([
+                { user_id: 1, menu_item_id: 1, rating: 1,
+                  note: 'Nachos Bell Grande eh?' },
+                { user_id: 1, menu_item_id: 2, rating: 0 }
+              ])
