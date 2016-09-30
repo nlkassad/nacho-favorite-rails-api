@@ -25,3 +25,6 @@ Restaurant.create([
                     { name: 'Harry’s Bar and Grill',
                       address: 6,	city: 'Boston' }
                   ])
+MenuItem.create([
+                { dish_id: 1, restaurant_id: 1 }
+                ])
