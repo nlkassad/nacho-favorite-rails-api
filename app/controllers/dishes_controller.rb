@@ -1,7 +1,6 @@
 class DishesController < ApplicationController
   def index
-    @examples = Dish.all
-
-    render json: @examples
+    @dishes = Dish.all
+    render json: @dishes
   end
 end
