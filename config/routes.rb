@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :restaurants, except: [:new, :edit]
+  resources :dishes, except: [:new, :edit]
   resources :examples, except: [:new, :edit]
   post '/sign-up' => 'users#signup'
   post '/sign-in' => 'users#signin'
@@ -7,5 +8,5 @@ Rails.application.routes.draw do
   patch '/change-password/:id' => 'users#changepw'
   resources :users, only: [:index, :show]
 
-  get '/dishes' => 'dishes#index'
+  # get '/dishes' => 'dishes#index'
 end
