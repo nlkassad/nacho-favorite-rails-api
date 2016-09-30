@@ -9,3 +9,19 @@
 Dish.create([
               { name: 'Nachos' }
             ])
+Restaurant.create([
+                    { name: 'Taco Bell' },
+                    { name: 'The Painted Burro',
+                      address: 1,	city: 'Somerville' },
+                    { name: 'Pour House',
+                      address: 2,	city: 'Boston' },
+                    { name: 'Sunset Grill & Tap',
+                      address: 3,	city: 'Boston' },
+                    { name: 'Tremont 647',
+                      address: 4,
+                      city: 'Boston' },
+                    { name: 'John Harvard’s',
+                      address: 5,	city: 'Cambridge' },
+                    { name: 'Harry’s Bar and Grill',
+                      address: 6,	city: 'Boston' }
+                  ])
