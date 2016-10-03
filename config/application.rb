@@ -41,7 +41,8 @@ module RailsApiNachoFavorite
     # Cross-Origin Resource Sharing
     config.middleware.use Rack::Cors do
       allow do
-        origins ENV['CLIENT_ORIGIN'] || 'http://localhost:8080'
+        # origins ENV['CLIENT_ORIGIN'] || 'http://localhost:8080'
+        origins ENV['CLIENT_ORIGIN'] || 'https://nlkassad.github.io'
         resource '*',
                  headers: :any,
                  methods: [:options, :get,
