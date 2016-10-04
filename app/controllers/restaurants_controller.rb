@@ -1,4 +1,4 @@
-class RestaurantsController < ApplicationController
+class RestaurantsController < ProtectedController
   before_action :set_restaurant, only: [:show, :update, :destroy]
 
   # GET /restaurants
@@ -49,11 +49,11 @@ class RestaurantsController < ApplicationController
 
   private
 
-    def set_restaurant
-      @restaurant = Restaurant.find(params[:id])
-    end
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:id])
+  end
 
-    def restaurant_params
-      params.require(:restaurant).permit(:name, :address, :city)
-    end
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :address, :city)
+  end
 end

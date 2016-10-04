@@ -1,4 +1,4 @@
-class MenuItemsController < ApplicationController
+class MenuItemsController < ProtectedController
   before_action :set_menu_item, only: [:show, :update, :destroy]
 
   # GET /menu_items
@@ -49,11 +49,11 @@ class MenuItemsController < ApplicationController
 
   private
 
-    def set_menu_item
-      @menu_item = MenuItem.find(params[:id])
-    end
+  def set_menu_item
+    @menu_item = MenuItem.find(params[:id])
+  end
 
-    def menu_item_params
-      params.require(:menu_item).permit(:restaurant_id, :dish_id)
-    end
+  def menu_item_params
+    params.require(:menu_item).permit(:restaurant_id, :dish_id)
+  end
 end
