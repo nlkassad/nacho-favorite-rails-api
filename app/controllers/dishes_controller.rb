@@ -1,4 +1,4 @@
-class DishesController < ApplicationController
+class DishesController < ProtectedController
   before_action :set_dish, only: [:show, :update, :destroy]
 
   # GET /dishes
@@ -49,11 +49,11 @@ class DishesController < ApplicationController
 
   private
 
-    def set_dish
-      @dish = Dish.find(params[:id])
-    end
+  def set_dish
+    @dish = Dish.find(params[:id])
+  end
 
-    def dish_params
-      params.require(:dish).permit(:name)
-    end
+  def dish_params
+    params.require(:dish).permit(:name)
+  end
 end
