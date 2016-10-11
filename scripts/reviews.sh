@@ -3,17 +3,27 @@
 # index
 
 curl --include --request GET https://nacho-favorite-api.herokuapp.com/reviews
+curl --include --request GET https://localhost:3000/reviews \
   # --header "Authorization: Token token=$TOKEN"
+
+  curl --include --request GET http://localhost:3000/reviews/$ID \
+    --header "Authorization: Token token=$TOKEN"
 
 # show
 
+curl --include --request GET http://localhost:3000/reviews/$ID \
+  --header "Authorization: Token token=$TOKEN"
+
+curl --include --request GET https://localhost:3000/reviews/1
 curl --include --request GET https://nacho-favorite-api.herokuapp.com/reviews/1
   # --header "Authorization: Token token=$TOKEN"
 
 # create
 
-# curl --include --request PATCH http://localhost:3000/appointments/1 \
+# curl --include --request PATCH http://localhost:3000/reviews/1 \
+
 curl --include --request POST https://nacho-favorite-api.herokuapp.com/reviews \
+curl --include --request PATCH http://localhost:3000/reviews/1 \
   --header "Content-Type: application/json" \
   --data '{
     "review": {
@@ -24,6 +34,7 @@ curl --include --request POST https://nacho-favorite-api.herokuapp.com/reviews \
     }
   }'
 
+  # curl --include --request PATCH http://localhost:3000/appointments/1 \
   curl --include --request POST https://nacho-favorite-api.herokuapp.com/reviews \
     --header "Content-Type: application/json" \
     --data '{
@@ -34,6 +45,15 @@ curl --include --request POST https://nacho-favorite-api.herokuapp.com/reviews \
         "note": "The most test around!"
       }
     }'
+
+    curl --include --request PATCH http://localhost:3000/reviews/$ID \
+      --header "Content-Type: application/json" \
+      --header "Authorization: Token token=$TOKEN" \
+      --data '{
+        "review": {
+          "note": "tacossss"
+        }
+      }'
 
 # update
 

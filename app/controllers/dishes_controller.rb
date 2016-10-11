@@ -1,4 +1,4 @@
-class DishesController < ProtectedController
+class DishesController < OpenReadController
   before_action :set_dish, only: [:show, :update, :destroy]
 
   # GET /dishes
@@ -29,23 +29,23 @@ class DishesController < ProtectedController
 
   # PATCH/PUT /dishes/1
   # PATCH/PUT /dishes/1.json
-  def update
-    @dish = Dish.find(params[:id])
-
-    if @dish.update(dish_params)
-      head :no_content
-    else
-      render json: @dish.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   @dish = Dish.find(params[:id])
+  #
+  #   if @dish.update(dish_params)
+  #     head :no_content
+  #   else
+  #     render json: @dish.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /dishes/1
   # DELETE /dishes/1.json
-  def destroy
-    @dish.destroy
-
-    head :no_content
-  end
+  # def destroy
+  #   @dish.destroy
+  #
+  #   head :no_content
+  # end
 
   private
 
