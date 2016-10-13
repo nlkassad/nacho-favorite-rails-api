@@ -1,5 +1,5 @@
-class RestaurantsController < ProtectedController
-  before_action :set_restaurant, only: [:show, :update, :destroy]
+class RestaurantsController < OpenReadController
+  before_action :set_restaurant, only: [:show]
 
   # GET /restaurants
   # GET /restaurants.json
@@ -29,23 +29,23 @@ class RestaurantsController < ProtectedController
 
   # PATCH/PUT /restaurants/1
   # PATCH/PUT /restaurants/1.json
-  def update
-    @restaurant = Restaurant.find(params[:id])
-
-    if @restaurant.update(restaurant_params)
-      head :no_content
-    else
-      render json: @restaurant.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   @restaurant = Restaurant.find(params[:id])
+  #
+  #   if @restaurant.update(restaurant_params)
+  #     head :no_content
+  #   else
+  #     render json: @restaurant.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /restaurants/1
   # DELETE /restaurants/1.json
-  def destroy
-    @restaurant.destroy
-
-    head :no_content
-  end
+  # def destroy
+  #   @restaurant.destroy
+  #
+  #   head :no_content
+  # end
 
   private
 

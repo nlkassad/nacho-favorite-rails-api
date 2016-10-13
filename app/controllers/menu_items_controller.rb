@@ -1,5 +1,5 @@
-class MenuItemsController < ProtectedController
-  before_action :set_menu_item, only: [:show, :update, :destroy]
+class MenuItemsController < OpenReadController
+  before_action :set_menu_item, only: [:show]
 
   # GET /menu_items
   # GET /menu_items.json
@@ -29,23 +29,23 @@ class MenuItemsController < ProtectedController
 
   # PATCH/PUT /menu_items/1
   # PATCH/PUT /menu_items/1.json
-  def update
-    @menu_item = MenuItem.find(params[:id])
-
-    if @menu_item.update(menu_item_params)
-      head :no_content
-    else
-      render json: @menu_item.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   @menu_item = MenuItem.find(params[:id])
+  #
+  #   if @menu_item.update(menu_item_params)
+  #     head :no_content
+  #   else
+  #     render json: @menu_item.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /menu_items/1
   # DELETE /menu_items/1.json
-  def destroy
-    @menu_item.destroy
-
-    head :no_content
-  end
+  # def destroy
+  #   @menu_item.destroy
+  #
+  #   head :no_content
+  # end
 
   private
 

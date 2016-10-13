@@ -1,8 +1,5 @@
-class ReviewsController < ProtectedController
-  before_action :set_review, only: [:show, :update, :destroy]
-  # before_filter :require_permission, only: :listmyreviews
-
-  # skip_before_action :authenticate, only: [:index]
+class ReviewsController < OpenReadController
+  before_action :set_review, only: [:update, :destroy]
 
   # GET /reviews
   # GET /reviews.json
@@ -15,14 +12,15 @@ class ReviewsController < ProtectedController
   # GET /reviews/1
   # GET /reviews/1.json
   def show
+    @review = Review.find(params[:id])
     render json: @review
   end
 
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(review_params)
-    @review.user_id = current_user.id if current_user
+    # @review = Review.new(review_params)
+    @review = current_user.reviews.build(review_params)
 
     if @review.save
       render json: @review, status: :created, location: @review
@@ -34,7 +32,7 @@ class ReviewsController < ProtectedController
   # PATCH/PUT /reviews/1
   # PATCH/PUT /reviews/1.json
   def update
-    @review = Review.find(params[:id])
+    # @review = Review.find(params[:id])
 
     if @review.update(review_params)
       head :no_content
@@ -60,7 +58,7 @@ class ReviewsController < ProtectedController
   private
 
   def set_review
-    @review = Review.find(params[:id])
+    @review = current_user.reviews.find(params[:id])
   end
 
   def review_params
