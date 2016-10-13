@@ -1,5 +1,5 @@
 class ReviewsController < OpenReadController
-  before_action :set_review, only: [:show, :update, :destroy]
+  before_action :set_review, only: [:update, :destroy]
 
   # GET /reviews
   # GET /reviews.json
@@ -12,6 +12,7 @@ class ReviewsController < OpenReadController
   # GET /reviews/1
   # GET /reviews/1.json
   def show
+    @review = Review.find(params[:id])
     render json: @review
   end
 

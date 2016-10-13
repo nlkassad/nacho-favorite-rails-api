@@ -1,5 +1,5 @@
 class DishesController < OpenReadController
-  before_action :set_dish, only: [:show, :update, :destroy]
+  before_action :set_dish, only: [:show]
 
   # GET /dishes
   # GET /dishes.json

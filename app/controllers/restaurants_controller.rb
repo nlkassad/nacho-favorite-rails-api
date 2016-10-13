@@ -1,5 +1,5 @@
 class RestaurantsController < OpenReadController
-  before_action :set_restaurant, only: [:show, :update, :destroy]
+  before_action :set_restaurant, only: [:show]
 
   # GET /restaurants
   # GET /restaurants.json

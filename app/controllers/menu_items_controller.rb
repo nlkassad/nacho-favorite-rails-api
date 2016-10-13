@@ -1,5 +1,5 @@
 class MenuItemsController < OpenReadController
-  before_action :set_menu_item, only: [:show, :update, :destroy]
+  before_action :set_menu_item, only: [:show]
 
   # GET /menu_items
   # GET /menu_items.json
