@@ -2,6 +2,12 @@
 
 A project build with the GA `rails-api` template. Includes authentication.
 
+## Links
+Client Repo: https://github.com/nlkassad/nacho-favorite-client
+API Repo: https://github.com/nlkassad/nacho-favorite-rails-api
+Live Client: https://nlkassad.github.io/nacho-favorite-client/
+Live API: https://nacho-favorite-api.herokuapp.com
+
 ## Back End API for Nacho Favorite app
 
 This is the back end API for the Nacho Favorite app. It is
